@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>دعوة زفاف ابراهيم & نجاة | Ibrahim & Najat Wedding</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="دعوة زفاف فاخرة وتفاعلية لزفاف ابراهيم الدريدي & نجاة عجاري - الأربعاء 28 أكتوبر 2026 بالمطوية">
+  <meta property="og:title" content="دعوة زفاف ابراهيم & نجاة">
+  <meta property="og:description" content="عقد القران ومأدبة العشاء وحنة العريس - عائلة الدريدي وعجاري">
+  
+  <!-- Google Fonts: Amiri, Aref Ruqaa, Cairo, Playfair Display, Cinzel Decorative -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      --bg-cream: #FAF7F2;
+      --bg-warm-beige: #F5EFEB;
+      --bg-ivory: #FFFDF9;
+      --card-bg: rgba(255, 253, 249, 0.94);
+      --door-cream-light: #FDFBF7;
+      --door-cream: #F5EFE6;
+      --door-cream-dark: #E8DED1;
+      --gold-1: #F9E7B9;
+      --gold-2: #E5C378;
+      --gold-3: #C89B3C;
+      --gold-4: #8F6B1E;
+      --gold-gradient: linear-gradient(135deg, #FDE8BB 0%, #D4AF37 32%, #FFF4D0 50%, #B38728 75%, #ECC880 100%);
+      --gold-gradient-subtle: linear-gradient(135deg, rgba(212,175,55,0.18) 0%, rgba(179,135,40,0.08) 100%);
+      --mocha-deep: #2A211D;
+      --mocha-text: #4A3B32;
+      --mocha-muted: #7D6B60;
+      --shadow-door-inner: inset 0 0 40px rgba(180, 150, 110, 0.25);
+      --font-amiri: 'Amiri', serif;
+      --font-ruqaa: 'Aref Ruqaa', serif;
+      --font-cairo: 'Cairo', sans-serif;
+      --font-cinzel: 'Cinzel Decorative', serif;
+      --font-playfair: 'Playfair Display', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      background-image: 
+        radial-gradient(circle at 50% 0%, #FFFFFF 0%, #FAF7F2 60%, #F1E6DA 100%);
+      color: var(--mocha-text);
+      font-family: var(--font-cairo);
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Elegant Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-cream);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(212, 175, 55, 0.45);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-3);
+    }
+
+    /* Floating Audio Player */
+    .floating-audio-btn {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 850;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(110, 80, 20, 0.12);
+      transition: all 0.3s ease;
+    }
+    .floating-audio-btn:hover {
+      transform: scale(1.08);
+      border-color: var(--gold-3);
+    }
+    .audio-icon-gold {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold-4);
+    }
+    .pulse-ring {
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      animation: audioPulse 2s infinite ease-out;
+      pointer-events: none;
+    }
+    @keyframes audioPulse {
+      0% { transform: scale(0.9); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       3D LUXURY EMBOSSED GATEFOLD DOORS & WAX SEAL (REFERENCE DESIGN)
+       ========================================================================== */
+    .doors-curtain-container {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
+      background: radial-gradient(circle at 50% 45%, #FFFDF9 0%, #F5EEE4 60%, #E8DCD0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1800px;
+      perspective-origin: 50% 50%;
+      pointer-events: auto;
+      cursor: pointer;
+      transition: opacity 4.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 4.8s;
+      overflow: hidden;
+    }
+    .doors-curtain-container.opened {
+      pointer-events: none !important;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    /* Presentation Card Stage: centered luxury card on desktop, full screen on mobile */
+    .doors-stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 540px;
+      max-height: 830px;
+      aspect-ratio: 666 / 1024;
+      perspective: 1800px;
+      perspective-origin: 50% 50%;
+      transform-style: preserve-3d;
+      box-shadow: 0 25px 70px rgba(80, 55, 35, 0.3), 0 8px 24px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      overflow: visible;
+      background: #F4EFEB;
+    }
+
+    @media (max-width: 600px) {
+      .doors-stage {
+        max-width: 100vw;
+        max-height: 100vh;
+        aspect-ratio: auto;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+
+    .door-leaf {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 50.15%; /* Slight overlap down center */
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform-style: preserve-3d;
+      /* Grand, slow, majestic 5.5s opening */
+      transition: transform 5.5s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 5.5s ease;
+      will-change: transform;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+    }
+
+    /* Left Gatefold Door Leaf */
+    .door-left {
+      left: 0;
+      background-image: url('assets/door-left-highres.webp'), url('assets/door-left-highres.png');
+      background-position: right center;
+      transform-origin: left center;
+      border-radius: 12px 0 0 12px;
+      box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.08);
+      border-right: 1px solid rgba(197, 160, 110, 0.3);
+    }
+    .doors-curtain-container.opened .door-left {
+      transform: rotateY(-118deg);
+      box-shadow: 25px 0 60px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Right Gatefold Door Leaf */
+    .door-right {
+      right: 0;
+      background-image: url('assets/door-right-highres.webp'), url('assets/door-right-highres.png');
+      background-position: left center;
+      transform-origin: right center;
+      border-radius: 0 12px 12px 0;
+      box-shadow: inset 2px 0 8px rgba(0, 0, 0, 0.08);
+      border-left: 1px solid rgba(197, 160, 110, 0.3);
+    }
+    .doors-curtain-container.opened .door-right {
+      transform: rotateY(118deg);
+      box-shadow: -25px 0 60px rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 600px) {
+      .door-left, .door-right {
+        border-radius: 0;
+      }
+    }
+
+    /* Subtle Paper Grain & Ambient Sheen on Doors */
+    .door-tactile-sheen {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 65%),
+                  linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 40%, rgba(160, 130, 95, 0.06) 100%);
+      pointer-events: none;
+    }
+
+    /* Center Vertical Crease Shadow */
+    .doors-center-crease {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.12) 0%, transparent 45%, transparent 55%, rgba(0,0,0,0.12) 100%);
+      z-index: 505;
+      pointer-events: none;
+      transition: opacity 0.8s ease;
+    }
+    .doors-curtain-container.opened .doors-center-crease {
+      opacity: 0;
+    }
+
+    /* Floating Tap Hint at the Bottom (Nothing covering the seal) */
+    .tap-hint-bottom {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 550;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .doors-curtain-container.opened .tap-hint-bottom {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    .tap-hint-text {
+      font-family: var(--font-cairo);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--mocha-deep);
+      background: rgba(255, 253, 249, 0.94);
+      backdrop-filter: blur(8px);
+      padding: 7px 22px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 4px 16px rgba(70, 50, 30, 0.15);
+      letter-spacing: 0.4px;
+      animation: hintBounce 2.2s infinite ease-in-out;
+    }
+    @keyframes hintBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* ==========================================================================
+       INTERIOR INVITATION: LUXURY SLIDE CARDS (NO SCROLLING)
+       ========================================================================== */
+    .invitation-interior-flow {
+      width: 100%;
+      max-width: 540px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 16px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Ambient Floral Background Accents */
+    .bg-flourish {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.12;
+      z-index: 1;
+    }
+    .bg-flourish-top {
+      top: 0;
+      left: 0;
+      width: 200px;
+    }
+    .bg-flourish-bottom {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+    }
+
+    /* Standard Luxury Card Template as Slides */
+    .luxury-card {
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border-radius: 28px;
+      padding: 34px 24px;
+      text-align: center;
+      position: relative;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 20px 45px -12px rgba(74, 59, 50, 0.1),
+                  0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      z-index: 5;
+    }
+    .luxury-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 50px -10px rgba(74, 59, 50, 0.14);
+    }
+
+    /* Slide Card State: Hidden by default, animated when active */
+    .luxury-card.slide-card {
+      display: none;
+      opacity: 0;
+      transform: translateY(18px) scale(0.97);
+    }
+    .luxury-card.slide-card.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      animation: cardSlideIn 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+    }
+    @keyframes cardSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Card Navigation Controls Bar (Next / Prev / Dots) */
+    .card-nav-controls {
+      width: 100%;
+      max-width: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding: 6px 8px;
+      gap: 12px;
+      position: relative;
+      z-index: 1000;
+      pointer-events: auto !important;
+    }
+
+    .nav-arrow-btn {
+      background: rgba(255, 253, 249, 0.92);
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      border-radius: 25px;
+      padding: 9px 18px;
+      font-family: var(--font-cairo);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--mocha-deep);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(110, 80, 20, 0.08);
+      transition: all 0.3s ease;
+      visibility: hidden; /* Hidden on first card */
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-arrow-btn.visible {
+      visibility: visible;
+    }
+    .nav-arrow-btn:hover {
+      background: #FFFFFF;
+      border-color: var(--gold-3);
+      transform: translateY(-2px);
+    }
+    .nav-arrow-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .nav-next-main-btn {
+      background: var(--gold-gradient);
+      border: none;
+      border-radius: 25px;
+      padding: 10px 24px;
+      font-family: var(--font-cairo);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--mocha-deep);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(180, 135, 40, 0.35);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-next-main-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 24px rgba(180, 135, 40, 0.45);
+    }
+    .nav-next-main-btn:active {
+      transform: scale(0.97);
+    }
+    .nav-next-main-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .nav-dots-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(180, 140, 90, 0.28);
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+    .nav-dot.active {
+      width: 22px;
+      border-radius: 10px;
+      background: var(--gold-gradient);
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
+    }
+
+    /* In-card Action Next Button */
+    .card-inline-next-btn {
+      margin-top: 18px;
+      width: 100%;
+      background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(179,135,40,0.06) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 14px;
+      padding: 11px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--gold-4);
+      font-family: var(--font-cairo);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .card-inline-next-btn:hover {
+      background: var(--gold-gradient);
+      color: var(--mocha-deep);
+      border-color: var(--gold-3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.25);
+    }
+    .card-inline-next-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+    }
+
+    /* Mobile & Tablet Responsiveness */
+    @media (max-width: 600px) {
+      .invitation-interior-flow {
+        padding: 16px 12px;
+      }
+      .luxury-card {
+        padding: 24px 16px;
+        border-radius: 22px;
+      }
+      .main-couple-names {
+        font-size: 30px !important;
+      }
+      .quran-verse {
+        font-size: 16.5px !important;
+      }
+      .event-title {
+        font-size: 19px !important;
+      }
+      .floating-audio-btn {
+        top: 14px !important;
+        right: 14px !important;
+        width: 36px !important;
+        height: 36px !important;
+      }
+      .card-nav-controls {
+        margin-top: 12px;
+      }
+      .nav-arrow-btn {
+        padding: 8px 14px;
+        font-size: 12.5px;
+      }
+      .nav-next-main-btn {
+        padding: 9px 18px;
+        font-size: 13.5px;
+      }
+    }
+
+    /* Card Decorative Corner Accents */
+    .card-corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: var(--gold-3);
+      opacity: 0.6;
+    }
+    .corner-top-right {
+      top: 10px;
+      right: 10px;
+      border-top: 1.5px solid;
+      border-right: 1.5px solid;
+      border-top-right-radius: 6px;
+    }
+    .corner-top-left {
+      top: 10px;
+      left: 10px;
+      border-top: 1.5px solid;
+      border-left: 1.5px solid;
+      border-top-left-radius: 6px;
+    }
+    .corner-bottom-right {
+      bottom: 10px;
+      right: 10px;
+      border-bottom: 1.5px solid;
+      border-right: 1.5px solid;
+      border-bottom-right-radius: 6px;
+    }
+    .corner-bottom-left {
+      bottom: 10px;
+      left: 10px;
+      border-bottom: 1.5px solid;
+      border-left: 1.5px solid;
+      border-bottom-left-radius: 6px;
+    }
+
+    /* CARD 1: TITLE & DIBAAJA */
+    .bismillah-calligraphy {
+      font-family: var(--font-amiri);
+      font-size: 21px;
+      color: var(--gold-4);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .gold-divider-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 12px 0 16px 0;
+    }
+    .gold-divider-line::before, .gold-divider-line::after {
+      content: "";
+      height: 1px;
+      width: 50px;
+      background: linear-gradient(90deg, transparent, var(--gold-3), transparent);
+    }
+    .divider-rhombus {
+      width: 6px;
+      height: 6px;
+      background: var(--gold-3);
+      transform: rotate(45deg);
+    }
+
+    .quran-verse {
+      font-family: var(--font-amiri);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--mocha-deep);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .family-invitation-text {
+      font-size: 14px;
+      color: var(--mocha-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    .family-names-highlight {
+      font-family: var(--font-amiri);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--mocha-deep);
+      display: block;
+      margin: 6px 0;
+    }
+
+    .main-couple-names {
+      font-family: var(--font-ruqaa);
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 16px 0 6px 0;
+      background: linear-gradient(135deg, #8A6418 0%, #D4AF37 45%, #63470E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 2px rgba(212,175,55,0.25));
+    }
+
+    /* CARD 2: COUNTDOWN TIMER */
+    .card-title-gold {
+      font-family: var(--font-amiri);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--mocha-deep);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .card-title-gold svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold-3);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .countdown-box {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8F3EA 100%);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 16px;
+      padding: 12px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(160, 130, 95, 0.08);
+      position: relative;
+    }
+    .countdown-number {
+      font-family: var(--font-playfair);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold-4);
+      line-height: 1.1;
+    }
+    .countdown-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--mocha-muted);
+      margin-top: 4px;
+    }
+
+    /* CARD 3 & 4: EVENT CARDS */
+    .event-card {
+      text-align: right;
+      padding: 26px 20px;
+    }
+    .event-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.35);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .event-badge {
+      background: var(--gold-gradient);
+      color: var(--mocha-deep);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .event-title {
+      font-family: var(--font-amiri);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--mocha-deep);
+    }
+
+    .event-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14.5px;
+    }
+    .event-icon-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.14);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .event-icon-circle svg {
+      width: 17px;
+      height: 17px;
+      fill: var(--gold-4);
+    }
+    .event-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .event-label {
+      font-size: 11.5px;
+      color: var(--mocha-muted);
+      margin-bottom: 2px;
+    }
+    .event-value {
+      font-weight: 600;
+      color: var(--mocha-deep);
+      line-height: 1.4;
+    }
+
+    /* Interactive Gold-Framed Map Pin Button */
+    .gold-map-pin-btn {
+      width: 100%;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #FFFDF8 0%, #F5ECDD 100%);
+      border: 1.5px solid var(--gold-3);
+      border-radius: 16px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--gold-4);
+      font-family: var(--font-cairo);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.18);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .gold-map-pin-btn:hover {
+      background: var(--gold-gradient);
+      color: var(--mocha-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3);
+    }
+    .pin-icon-animated {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      animation: pinPulse 2s infinite ease-in-out;
+    }
+    @keyframes pinPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+
+    /* CARD 6: BLESSINGS & SIGNATURE */
+    .blessing-text {
+      font-family: var(--font-amiri);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--mocha-deep);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .aura-signature {
+      font-size: 11px;
+      color: var(--mocha-muted);
+      letter-spacing: 1px;
+      margin-top: 18px;
+      opacity: 0.8;
+    }
+
+    /* Floating Interactive Buttons (Calendar, Share) */
+    .action-floating-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      margin-top: 8px;
+    }
+    .action-chip-btn {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: #FFF;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--mocha-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .action-chip-btn:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--gold-3);
+    }
+    .action-chip-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: var(--gold-4);
+    }
+
+    /* Success Toast */
+    .toast-notification {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--mocha-deep);
+      color: #FFF;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      border: 1px solid var(--gold-3);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 2000;
+      opacity: 0;
+      transition: all 0.4s ease;
+      pointer-events: none;
+    }
+    .toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING MUSIC BUTTON -->
+  <div class="floating-audio-btn" id="audioToggleBtn" title="تشغيل / كتم الموسيقى" onclick="toggleAudioTrack()">
+    <span class="pulse-ring" id="audioPulseRing"></span>
+    <svg class="audio-icon-gold" viewBox="0 0 24 24" id="audioIcon">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    </svg>
+  </div>
+
+        <!-- ================================================================
+             3D LUXURY EMBOSSED GATEFOLD DOORS & WAX SEAL (REFERENCE DESIGN)
+             ================================================================ -->
+        <div class="doors-curtain-container" id="doorsContainer" onclick="handleOpenDoors()" role="button" aria-label="اضغط لفتح بطاقة الدعوة">
+          
+          <div class="doors-stage" id="doorsStage" onclick="handleOpenDoors()">
+            <!-- LEFT DOOR LEAF (contains left half of copper seal with I) -->
+            <div class="door-leaf door-left" id="doorLeft">
+              <div class="door-tactile-sheen"></div>
+            </div>
+
+            <!-- RIGHT DOOR LEAF (contains right half of copper seal with N) -->
+            <div class="door-leaf door-right" id="doorRight">
+              <div class="door-tactile-sheen"></div>
+            </div>
+
+            <!-- Center Crease Shadow -->
+            <div class="doors-center-crease"></div>
+
+            <!-- Floating Bottom Tap Hint (Leaves the entire copper wax seal 100% visible and clean) -->
+            <div class="tap-hint-bottom">
+              <span class="tap-hint-text">المس البطاقة لفتح الدعوة ✨</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================================================================
+             INTERIOR FLOW: LUXURY WARM-BEIGE MINIMALIST SLIDE CARDS (NO SCROLLING)
+             ================================================================ -->
+        <div class="invitation-interior-flow">
+          
+          <!-- CARD 1: TITLE & DIBAAJA CARD -->
+          <section class="luxury-card slide-card active" id="titleCard">
+            <div class="card-corner corner-top-right"></div>
+            <div class="card-corner corner-top-left"></div>
+            <div class="card-corner corner-bottom-right"></div>
+            <div class="card-corner corner-bottom-left"></div>
+
+            <p class="bismillah-calligraphy">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+            
+            <div class="gold-divider-line">
+              <span class="divider-rhombus"></span>
+            </div>
+
+            <h2 class="quran-verse">"الْحَمْدُ لِلَّهِ الَّذِي بِكَرَمِهِ تُؤَلَّفُ قُلُوبُ الْعِبَادِ"</h2>
+
+            <p class="family-invitation-text">
+              يتشرف كلّ من
+              <span class="family-names-highlight">عائلة يوسف الدريدي</span>
+              و
+              <span class="family-names-highlight">عائلة صالح عجاري</span>
+              بدعوتكم الكريمة لمشاركتهم بهجة وفرحة زفاف قرة أعينهما
+            </p>
+
+            <h1 class="main-couple-names">ابراهيم & نجاة</h1>
+
+            <div class="gold-divider-line">
+              <span class="divider-rhombus"></span>
+            </div>
+
+            <p style="font-size: 13px; color: var(--mocha-muted); margin-top: 4px;">
+              حضوركم يكتمل به سرورنا ويزدان به حفلنا
+            </p>
+
+            <!-- Inline Next Button -->
+            <button class="card-inline-next-btn" onclick="goToNextSlide()">
+              <span>العد التنازلي</span>
+              <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </button>
+          </section>
+
+          <!-- CARD 2: ANIMATED COUNTDOWN TIMER -->
+          <section class="luxury-card slide-card" id="countdownCard">
+            <div class="card-corner corner-top-right"></div>
+            <div class="card-corner corner-top-left"></div>
+            <div class="card-corner corner-bottom-right"></div>
+            <div class="card-corner corner-bottom-left"></div>
+
+            <h3 class="card-title-gold">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+              العد التنازلي لليوم المنتظر
+            </h3>
+
+            <div class="countdown-grid">
+              <div class="countdown-box">
+                <span class="countdown-number" id="countDays">00</span>
+                <span class="countdown-label">أيام</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countHours">00</span>
+                <span class="countdown-label">ساعات</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countMinutes">00</span>
+                <span class="countdown-label">دقائق</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countSeconds">00</span>
+                <span class="countdown-label">ثواني</span>
+              </div>
+            </div>
+
+            <div class="action-floating-row">
+              <button class="action-chip-btn" onclick="addToGoogleCalendar()">
+                <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                حفظ الموعد بالتقويم
+              </button>
+            </div>
+
+            <!-- Inline Next Button -->
+            <button class="card-inline-next-btn" onclick="goToNextSlide()">
+              <span>مراسم عقد القران</span>
+              <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </button>
+          </section>
+
+          <!-- CARD 3: EVENT 1 - عقد القران -->
+          <section class="luxury-card event-card slide-card" id="nikahCard">
+            <div class="card-corner corner-top-right"></div>
+            <div class="card-corner corner-top-left"></div>
+            <div class="card-corner corner-bottom-right"></div>
+            <div class="card-corner corner-bottom-left"></div>
+
+            <div class="event-header-row">
+              <span class="event-badge">المراسم الأولى</span>
+              <h3 class="event-title">عقد القران المبارك</h3>
+            </div>
+
+            <!-- Date & Time -->
+            <div class="event-detail-item">
+              <div class="event-icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+              </div>
+              <div class="event-text-group">
+                <span class="event-label">التاريخ واليوم</span>
+                <span class="event-value">الأربعاء 28 أكتوبر 2026</span>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="event-detail-item">
+              <div class="event-icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div class="event-text-group">
+                <span class="event-label">المكان</span>
+                <span class="event-value">جامع الماية بالمطوية</span>
+              </div>
+            </div>
+
+            <!-- Gold Framed Interactive Map Pin Button -->
+            <a class="gold-map-pin-btn" href="https://maps.google.com/?q=Mosqu%C3%A9e+El+Maya+El+Mettouia+Tunisie" target="_blank" rel="noopener noreferrer">
+              <svg class="pin-icon-animated" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>الموقع على الخريطة (جامع الماية)</span>
+            </a>
+
+            <!-- Inline Next Button -->
+            <button class="card-inline-next-btn" onclick="goToNextSlide()">
+              <span>مأدبة العشاء وحنة العريس</span>
+              <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </button>
+          </section>
+
+          <!-- CARD 4: EVENT 2 - مأدبة العشاء وحنة العريس -->
+          <section class="luxury-card event-card slide-card" id="dinnerCard">
+            <div class="card-corner corner-top-right"></div>
+            <div class="card-corner corner-top-left"></div>
+            <div class="card-corner corner-bottom-right"></div>
+            <div class="card-corner corner-bottom-left"></div>
+
+            <div class="event-header-row">
+              <span class="event-badge">المراسم الثانية</span>
+              <h3 class="event-title">مأدبة العشاء وحنة العريس</h3>
+            </div>
+
+            <!-- Date -->
+            <div class="event-detail-item">
+              <div class="event-icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+              </div>
+              <div class="event-text-group">
+                <span class="event-label">التاريخ واليوم</span>
+                <span class="event-value">الخميس 29 أكتوبر 2026</span>
+              </div>
+            </div>
+
+            <!-- Dinner -->
+            <div class="event-detail-item">
+              <div class="event-icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+              </div>
+              <div class="event-text-group">
+                <span class="event-label">مأدبة العشاء</span>
+                <span class="event-value">بداية من الساعة 15h</span>
+              </div>
+            </div>
+
+            <!-- Henna -->
+            <div class="event-detail-item">
+              <div class="event-icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M12.3 2a10 10 0 0 0-.19 14 10 10 0 0 0 11.89 0A10 10 0 1 1 12.3 2z"/></svg>
+              </div>
+              <div class="event-text-group">
+                <span class="event-label">حنة العريس</span>
+                <span class="event-value">ليلاً بمقر سكناه</span>
+              </div>
+            </div>
+
+            <p style="font-size: 13px; color: var(--mocha-muted); line-height: 1.6; margin-top: 8px;">
+              يسعدنا تشريفكم لمشاركتنا أحلى الأوقات وأبهج اللحظات في هذه الأيام المباركة.
+            </p>
+
+            <!-- Inline Next Button -->
+            <button class="card-inline-next-btn" onclick="goToNextSlide()">
+              <span>البركة والمباركة</span>
+              <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </button>
+          </section>
+
+          <!-- CARD 5: BLESSING & SIGNATURE -->
+          <section class="luxury-card slide-card" id="closingCard">
+            <div class="card-corner corner-top-right"></div>
+            <div class="card-corner corner-top-left"></div>
+            <div class="card-corner corner-bottom-right"></div>
+            <div class="card-corner corner-bottom-left"></div>
+
+            <p class="blessing-text">
+              "بَارَكَ اللَّهُ لَهُمَا وَبَارَكَ عَلَيْهِمَا وَجَمَعَ بَيْنَهُمَا فِي خَيْرٍ"
+            </p>
+
+            <div class="gold-divider-line">
+              <span class="divider-rhombus"></span>
+            </div>
+
+            <div class="action-floating-row">
+              <button class="action-chip-btn" onclick="shareInvitation()">
+                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+                مشاركة الدعوة
+              </button>
+              <button class="action-chip-btn" onclick="copyInvitationLink()">
+                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                نسخ الرابط
+              </button>
+            </div>
+
+            <p class="aura-signature">AURA DIGITAL • DIGITAL INVITATIONS</p>
+          </section>
+
+          <!-- CARD NAVIGATION BAR (SUIVANT / PRÉCÉDENT / DOTS) -->
+          <div class="card-nav-controls">
+            <button class="nav-arrow-btn" id="btnPrevCard" onclick="goToPrevSlide()" title="البطاقة السابقة">
+              <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+              <span>السابق</span>
+            </button>
+
+            <div class="nav-dots-container" id="navDots">
+              <span class="nav-dot active" onclick="goToSlide(0)" title="الديباجة"></span>
+              <span class="nav-dot" onclick="goToSlide(1)" title="العد التنازلي"></span>
+              <span class="nav-dot" onclick="goToSlide(2)" title="عقد القران"></span>
+              <span class="nav-dot" onclick="goToSlide(3)" title="العشاء والحنة"></span>
+              <span class="nav-dot" onclick="goToSlide(4)" title="المباركة"></span>
+            </div>
+
+            <button class="nav-next-main-btn" id="btnNextCard" onclick="goToNextSlide()" title="البطاقة التالية">
+              <span id="nextBtnText">التالي</span>
+              <svg viewBox="0 0 24 24" id="nextBtnIcon"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </button>
+          </div>
+
+        </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toastNotice">تم نسخ رابط الدعوة بنجاح ✨</div>
+
+  <!-- JAVASCRIPT LOGIC & AUDIO SYNTHESIS -->
+  <script>
+    // State variables
+    let isDoorsOpen = false;
+    let isAudioPlaying = false;
+    let audioContext = null;
+    let bgOscillators = [];
+
+    // Wedding Target Date: Wednesday, October 28, 2026 at 16:00 (UTC+1)
+    const weddingDate = new Date("2026-10-28T16:00:00");
+
+    // 1. Web Audio API Elegant Harp/Chime Synthesizer
+    function playRoyalChime() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+
+        // Pentatonic royal arpeggio notes (F, A, C, E, G, C)
+        const notes = [349.23, 440.00, 523.25, 659.25, 783.99, 1046.50];
+        const now = audioContext.currentTime;
+
+        notes.forEach((freq, idx) => {
+          const osc = audioContext.createOscillator();
+          const gain = audioContext.createGain();
+          
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.12);
+
+          gain.gain.setValueAtTime(0.001, now + idx * 0.12);
+          gain.gain.exponentialRampToValueAtTime(0.18, now + idx * 0.12 + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.12 + 1.8);
+
+          osc.connect(gain);
+          gain.connect(audioContext.destination);
+
+          osc.start(now + idx * 0.12);
+          osc.stop(now + idx * 0.12 + 2.0);
+        });
+      } catch (err) {
+        console.warn("Audio Context init note:", err);
+      }
+    }
+
+    // Gentle Ambient Bed Synthesizer
+    function startAmbientDrone() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+
+        // Warm chord in background
+        const freqs = [174.61, 261.63, 329.63]; // F3, C4, E4
+        const now = audioContext.currentTime;
+
+        bgOscillators = freqs.map(freq => {
+          const osc = audioContext.createOscillator();
+          const gain = audioContext.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, now);
+
+          gain.gain.setValueAtTime(0.0001, now);
+          gain.gain.linearRampToValueAtTime(0.02, now + 2);
+
+          osc.connect(gain);
+          gain.connect(audioContext.destination);
+          osc.start();
+          return { osc, gain };
+        });
+
+        isAudioPlaying = true;
+        document.getElementById('audioPulseRing').style.display = 'block';
+      } catch (e) {
+        console.warn("Ambient note:", e);
+      }
+    }
+
+    function stopAmbientDrone() {
+      bgOscillators.forEach(({ osc, gain }) => {
+        try {
+          gain.gain.linearRampToValueAtTime(0.0001, audioContext.currentTime + 1);
+          setTimeout(() => osc.stop(), 1100);
+        } catch(e){}
+      });
+      bgOscillators = [];
+      isAudioPlaying = false;
+      document.getElementById('audioPulseRing').style.display = 'none';
+    }
+
+    function toggleAudioTrack() {
+      if (isAudioPlaying) {
+        stopAmbientDrone();
+      } else {
+        playRoyalChime();
+        startAmbientDrone();
+      }
+    }
+
+    // 2. Realistic Wax Seal Break Sound Effect
+    function playWaxCrackSound() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+        const now = audioContext.currentTime;
+
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.exponentialRampToValueAtTime(80, now + 0.16);
+
+        gain.gain.setValueAtTime(0.35, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.2);
+      } catch (e) {
+        console.warn('Audio note:', e);
+      }
+    }
+
+    // 3. Door Opening Trigger with 3D Physics
+    function handleOpenDoors() {
+      if (isDoorsOpen) return;
+      isDoorsOpen = true;
+
+      // Play authentic wax seal snap sound then royal chime
+      playWaxCrackSound();
+      setTimeout(playRoyalChime, 180);
+      startAmbientDrone();
+
+      // Trigger 3D Gatefold Opening
+      const doors = document.getElementById('doorsContainer');
+      if (doors) {
+        doors.classList.add('opened');
+        doors.style.pointerEvents = 'none';
+        setTimeout(() => {
+          doors.style.display = 'none';
+        }, 5600);
+      }
+
+      goToSlide(0);
+    }
+
+    function resetDoorAnimation() {
+      const doors = document.getElementById('doorsContainer');
+      if (doors) {
+        doors.style.display = 'flex';
+        doors.style.pointerEvents = 'auto';
+        doors.classList.remove('opened');
+      }
+      isDoorsOpen = false;
+      goToSlide(0);
+    }
+
+    // 4. Slide Navigation (Card-by-Card - No Scrolling)
+    let currentSlide = 0;
+    const totalSlides = 5;
+    const slideIds = ['titleCard', 'countdownCard', 'nikahCard', 'dinnerCard', 'closingCard'];
+
+    function goToSlide(index) {
+      if (index < 0 || index >= totalSlides) return;
+      currentSlide = index;
+
+      slideIds.forEach((id, idx) => {
+        const card = document.getElementById(id);
+        if (!card) return;
+        if (idx === currentSlide) {
+          card.classList.add('active');
+          card.style.display = 'block';
+        } else {
+          card.classList.remove('active');
+          card.style.display = 'none';
+        }
+      });
+
+      // Update Dots
+      const dots = document.querySelectorAll('.nav-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      // Update Prev Button visibility
+      const btnPrev = document.getElementById('btnPrevCard');
+      if (btnPrev) {
+        if (currentSlide > 0) {
+          btnPrev.classList.add('visible');
+          btnPrev.style.visibility = 'visible';
+          btnPrev.style.pointerEvents = 'auto';
+        } else {
+          btnPrev.classList.remove('visible');
+          btnPrev.style.visibility = 'hidden';
+          btnPrev.style.pointerEvents = 'none';
+        }
+      }
+
+      // Update Next Button text on last slide
+      const nextBtnText = document.getElementById('nextBtnText');
+      if (nextBtnText) {
+        if (currentSlide === totalSlides - 1) {
+          nextBtnText.textContent = "البداية ↺";
+        } else {
+          nextBtnText.textContent = "التالي";
+        }
+      }
+    }
+
+    function goToNextSlide(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      if (currentSlide < totalSlides - 1) {
+        goToSlide(currentSlide + 1);
+      } else {
+        goToSlide(0);
+      }
+    }
+
+    function goToPrevSlide(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      if (currentSlide > 0) {
+        goToSlide(currentSlide - 1);
+      }
+    }
+
+    // Touch Swipe Support for mobile (ignores button clicks)
+    let touchStartX = 0;
+    let touchEndX = 0;
+    document.addEventListener('touchstart', e => {
+      if (e.target.closest('.card-nav-controls') || e.target.closest('button') || e.target.closest('a')) return;
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', e => {
+      if (e.target.closest('.card-nav-controls') || e.target.closest('button') || e.target.closest('a')) return;
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        if (diff < 0) {
+          goToNextSlide();
+        } else {
+          goToPrevSlide();
+        }
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') goToNextSlide();
+      if (e.key === 'ArrowRight') goToPrevSlide();
+    });
+
+    // Explicit event listeners on load
+    window.addEventListener('load', () => {
+      goToSlide(0);
+      const nextBtn = document.getElementById('btnNextCard');
+      if (nextBtn) {
+        nextBtn.addEventListener('click', goToNextSlide);
+      }
+      const prevBtn = document.getElementById('btnPrevCard');
+      if (prevBtn) {
+        prevBtn.addEventListener('click', goToPrevSlide);
+      }
+    });
+
+    // 3. Animated Countdown Timer
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = weddingDate.getTime() - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('countDays').textContent = String(days).padStart(2, '0');
+        document.getElementById('countHours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('countMinutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('countSeconds').textContent = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById('countDays').textContent = '00';
+        document.getElementById('countHours').textContent = '00';
+        document.getElementById('countMinutes').textContent = '00';
+        document.getElementById('countSeconds').textContent = '00';
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+
+
+    // 5. Calendar Save (.ics / Google Calendar)
+    function addToGoogleCalendar() {
+      const title = encodeURIComponent("زفاف ابراهيم الدريدي & نجاة عجاري");
+      const details = encodeURIComponent("عقد القران ومأدبة العشاء وحنة العريس - أهلاً وسهلاً بكم في زفاف ابراهيم & نجاة بالمطوية");
+      const location = encodeURIComponent("جامع الماية بالمطوية، قابس، تونس");
+      // 28 Oct 2026 16:00 to 22:00
+      const dates = "20261028T150000Z/20261028T210000Z";
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
+      window.open(gcalUrl, '_blank');
+    }
+
+    // 6. Share & Copy Link Utilities
+    function copyInvitationLink() {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href);
+      }
+      showToast("تم نسخ رابط الدعوة بنجاح ✨");
+    }
+
+    function shareInvitation() {
+      if (navigator.share) {
+        navigator.share({
+          title: "دعوة زفاف ابراهيم & نجاة",
+          text: "يسر عائلتي الدريدي وعجاري دعوتكم لمشاركتهم فرحة زفاف ابراهيم & نجاة",
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        copyInvitationLink();
+      }
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById('toastNotice');
+      toast.textContent = text;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+  </script>
+</body>
+</html>
