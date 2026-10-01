@@ -85,40 +85,57 @@
       position: fixed;
       top: 24px;
       right: 24px;
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
-      background: rgba(255, 253, 249, 0.92);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 253, 249, 0.94);
+      backdrop-filter: blur(14px);
       border: 1.5px solid rgba(212, 175, 55, 0.45);
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 850;
+      z-index: 1001;
       cursor: pointer;
-      box-shadow: 0 4px 18px rgba(110, 80, 20, 0.12);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 18px rgba(110, 80, 20, 0.14);
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
     }
     .floating-audio-btn:hover {
-      transform: scale(1.08);
+      transform: scale(1.1);
       border-color: var(--gold-3);
+      box-shadow: 0 6px 24px rgba(212, 175, 55, 0.28);
+    }
+    .floating-audio-btn:active {
+      transform: scale(0.94);
+    }
+    .floating-audio-btn.playing {
+      border-color: var(--gold-3);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.32);
     }
     .audio-icon-gold {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       fill: var(--gold-4);
+      transition: fill 0.3s ease, transform 0.3s ease;
+    }
+    .floating-audio-btn.playing .audio-icon-gold {
+      fill: var(--gold-3);
+      animation: audioIconBeat 2s infinite ease-in-out;
+    }
+    @keyframes audioIconBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
     .pulse-ring {
       position: absolute;
       inset: -5px;
       border-radius: 50%;
-      border: 1px solid rgba(212, 175, 55, 0.45);
+      border: 1.5px solid rgba(212, 175, 55, 0.55);
       animation: audioPulse 2s infinite ease-out;
       pointer-events: none;
     }
     @keyframes audioPulse {
       0% { transform: scale(0.9); opacity: 1; }
-      100% { transform: scale(1.5); opacity: 0; }
+      100% { transform: scale(1.6); opacity: 0; }
     }
 
     /* ==========================================================================
@@ -520,10 +537,14 @@
         font-size: 19px !important;
       }
       .floating-audio-btn {
-        top: 14px !important;
-        right: 14px !important;
-        width: 36px !important;
-        height: 36px !important;
+        top: 16px !important;
+        right: 16px !important;
+        width: 40px !important;
+        height: 40px !important;
+      }
+      .audio-icon-gold {
+        width: 19px !important;
+        height: 19px !important;
       }
       .card-nav-controls {
         margin-top: 12px;
@@ -871,11 +892,18 @@
 </head>
 <body>
 
+  <!-- BACKGROUND WEDDING MUSIC: A'shanek (عشانك) -->
+  <audio id="weddingAudio" preload="auto" loop playsinline autoplay>
+    <source src="assets/ashanek.mp3" type="audio/mpeg">
+    <source src="assets/A%C3%A2__shanek%20-%20%C3%98%C2%B9%C3%98%C2%B4%C3%98%C2%A7%C3%99_%C3%99_.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- FLOATING MUSIC BUTTON -->
-  <div class="floating-audio-btn" id="audioToggleBtn" title="تشغيل / كتم الموسيقى" onclick="toggleAudioTrack()">
-    <span class="pulse-ring" id="audioPulseRing"></span>
+  <div class="floating-audio-btn" id="audioToggleBtn" title="تشغيل الموسيقى" aria-label="تشغيل أو كتم الموسيقى" role="button" onclick="toggleAudioTrack()">
+    <span class="pulse-ring" id="audioPulseRing" style="display: none;"></span>
     <svg class="audio-icon-gold" viewBox="0 0 24 24" id="audioIcon">
-      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      <!-- Muted icon initially until doors open or user plays -->
+      <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27l4.73 4.73H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
     </svg>
   </div>
 
@@ -1181,96 +1209,156 @@
     let isDoorsOpen = false;
     let isAudioPlaying = false;
     let audioContext = null;
-    let bgOscillators = [];
+    let weddingAudio = null;
+    let fadeAudioTimer = null;
+    let userManuallyPaused = false;
 
     // Wedding Target Date: Wednesday, October 28, 2026 at 16:00 (UTC+1)
     const weddingDate = new Date("2026-10-28T16:00:00");
 
-    // 1. Web Audio API Elegant Harp/Chime Synthesizer
-    function playRoyalChime() {
-      try {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        if (!AudioCtx) return;
-        if (!audioContext) audioContext = new AudioCtx();
-        if (audioContext.state === 'suspended') audioContext.resume();
+    // 1. Audio Controller & UI Sync
+    function getWeddingAudio() {
+      if (!weddingAudio) {
+        weddingAudio = document.getElementById('weddingAudio');
+      }
+      return weddingAudio;
+    }
 
-        // Pentatonic royal arpeggio notes (F, A, C, E, G, C)
-        const notes = [349.23, 440.00, 523.25, 659.25, 783.99, 1046.50];
-        const now = audioContext.currentTime;
+    function updateAudioUI(isPlaying) {
+      isAudioPlaying = isPlaying;
+      const pulseRing = document.getElementById('audioPulseRing');
+      const toggleBtn = document.getElementById('audioToggleBtn');
+      const audioIcon = document.getElementById('audioIcon');
 
-        notes.forEach((freq, idx) => {
-          const osc = audioContext.createOscillator();
-          const gain = audioContext.createGain();
-          
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, now + idx * 0.12);
-
-          gain.gain.setValueAtTime(0.001, now + idx * 0.12);
-          gain.gain.exponentialRampToValueAtTime(0.18, now + idx * 0.12 + 0.04);
-          gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.12 + 1.8);
-
-          osc.connect(gain);
-          gain.connect(audioContext.destination);
-
-          osc.start(now + idx * 0.12);
-          osc.stop(now + idx * 0.12 + 2.0);
-        });
-      } catch (err) {
-        console.warn("Audio Context init note:", err);
+      if (pulseRing) {
+        pulseRing.style.display = isPlaying ? 'block' : 'none';
+      }
+      if (toggleBtn) {
+        toggleBtn.classList.toggle('playing', isPlaying);
+        const titleText = isPlaying ? 'كتم الموسيقى' : 'تشغيل الموسيقى (عشانك)';
+        toggleBtn.setAttribute('title', titleText);
+        toggleBtn.setAttribute('aria-label', titleText);
+      }
+      if (audioIcon) {
+        if (isPlaying) {
+          // Speaker with sound waves (playing)
+          audioIcon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+        } else {
+          // Speaker muted / slashed (paused)
+          audioIcon.innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27l4.73 4.73H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+        }
       }
     }
 
-    // Gentle Ambient Bed Synthesizer
-    function startAmbientDrone() {
-      try {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        if (!audioContext) audioContext = new AudioCtx();
-        if (audioContext.state === 'suspended') audioContext.resume();
+    function startWeddingMusic(targetVol = 0.8, durationMs = 1200) {
+      const audio = getWeddingAudio();
+      if (!audio) return;
+      if (fadeAudioTimer) clearInterval(fadeAudioTimer);
 
-        // Warm chord in background
-        const freqs = [174.61, 261.63, 329.63]; // F3, C4, E4
-        const now = audioContext.currentTime;
-
-        bgOscillators = freqs.map(freq => {
-          const osc = audioContext.createOscillator();
-          const gain = audioContext.createGain();
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(freq, now);
-
-          gain.gain.setValueAtTime(0.0001, now);
-          gain.gain.linearRampToValueAtTime(0.02, now + 2);
-
-          osc.connect(gain);
-          gain.connect(audioContext.destination);
-          osc.start();
-          return { osc, gain };
+      userManuallyPaused = false;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          updateAudioUI(true);
+          const steps = 25;
+          const stepTime = Math.max(20, durationMs / steps);
+          const startVol = audio.volume;
+          const volStep = (targetVol - startVol) / steps;
+          let currentStep = 0;
+          fadeAudioTimer = setInterval(() => {
+            currentStep++;
+            if (currentStep >= steps) {
+              audio.volume = targetVol;
+              clearInterval(fadeAudioTimer);
+              fadeAudioTimer = null;
+            } else {
+              audio.volume = Math.min(1, Math.max(0, startVol + (volStep * currentStep)));
+            }
+          }, stepTime);
+        }).catch(err => {
+          console.warn("Autoplay note:", err);
+          updateAudioUI(false);
+          setupInteractionAudioUnlock();
         });
-
-        isAudioPlaying = true;
-        document.getElementById('audioPulseRing').style.display = 'block';
-      } catch (e) {
-        console.warn("Ambient note:", e);
       }
     }
 
-    function stopAmbientDrone() {
-      bgOscillators.forEach(({ osc, gain }) => {
-        try {
-          gain.gain.linearRampToValueAtTime(0.0001, audioContext.currentTime + 1);
-          setTimeout(() => osc.stop(), 1100);
-        } catch(e){}
+    function setupInteractionAudioUnlock() {
+      const unlockEvents = ['touchstart', 'touchend', 'click', 'pointerdown'];
+      const triggerUnlock = () => {
+        if (!userManuallyPaused) {
+          const audio = getWeddingAudio();
+          if (audio && audio.paused) {
+            startWeddingMusic(0.8, 1000);
+          }
+        }
+        unlockEvents.forEach(evt => {
+          window.removeEventListener(evt, triggerUnlock, true);
+          document.removeEventListener(evt, triggerUnlock, true);
+        });
+      };
+
+      unlockEvents.forEach(evt => {
+        window.addEventListener(evt, triggerUnlock, { capture: true, once: true });
+        document.addEventListener(evt, triggerUnlock, { capture: true, once: true });
       });
-      bgOscillators = [];
-      isAudioPlaying = false;
-      document.getElementById('audioPulseRing').style.display = 'none';
+    }
+
+    function attemptAutoPlay() {
+      const audio = getWeddingAudio();
+      if (!audio) return;
+
+      audio.volume = 0.8;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          updateAudioUI(true);
+        }).catch(err => {
+          setupInteractionAudioUnlock();
+        });
+      } else {
+        setupInteractionAudioUnlock();
+      }
+    }
+
+    function pauseWeddingMusic(durationMs = 500) {
+      const audio = getWeddingAudio();
+      if (!audio || audio.paused) {
+        updateAudioUI(false);
+        return;
+      }
+      if (fadeAudioTimer) clearInterval(fadeAudioTimer);
+
+      const startVol = audio.volume;
+      const steps = 15;
+      const stepTime = durationMs / steps;
+      const volStep = startVol / steps;
+      let curVol = startVol;
+
+      fadeAudioTimer = setInterval(() => {
+        curVol -= volStep;
+        if (curVol <= 0.05) {
+          audio.volume = 0;
+          audio.pause();
+          clearInterval(fadeAudioTimer);
+          fadeAudioTimer = null;
+          updateAudioUI(false);
+        } else {
+          audio.volume = Math.max(0, curVol);
+        }
+      }, stepTime);
     }
 
     function toggleAudioTrack() {
-      if (isAudioPlaying) {
-        stopAmbientDrone();
+      const audio = getWeddingAudio();
+      if (!audio) return;
+
+      if (!audio.paused && isAudioPlaying) {
+        userManuallyPaused = true;
+        pauseWeddingMusic(400);
       } else {
-        playRoyalChime();
-        startAmbientDrone();
+        userManuallyPaused = false;
+        startWeddingMusic(0.8, 600);
       }
     }
 
@@ -1306,10 +1394,11 @@
       if (isDoorsOpen) return;
       isDoorsOpen = true;
 
-      // Play authentic wax seal snap sound then royal chime
+      // Play authentic wax seal snap sound
       playWaxCrackSound();
-      setTimeout(playRoyalChime, 180);
-      startAmbientDrone();
+
+      // Ensure background wedding song (ashanek.mp3) is playing immediately
+      startWeddingMusic(0.8, 1200);
 
       // Trigger 3D Gatefold Opening
       const doors = document.getElementById('doorsContainer');
@@ -1446,6 +1535,7 @@
 
     // Explicit event listeners on load
     window.addEventListener('load', () => {
+      attemptAutoPlay();
       goToSlide(0);
       const nextBtn = document.getElementById('btnNextCard');
       if (nextBtn) {
@@ -1456,6 +1546,12 @@
         prevBtn.addEventListener('click', goToPrevSlide);
       }
     });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', attemptAutoPlay);
+    } else {
+      attemptAutoPlay();
+    }
 
     // 3. Animated Countdown Timer
     function updateCountdown() {
